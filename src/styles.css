@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    /* Colors */
+    --main-color: #FFFFFF;
+    --secondary-color: #046A38;
+    --tertiary-color: #DA291C;
+    --text-color: #373B5C;
+    --background-color: #F2F6FA;
+
+    /* Values */
+    --border-radius: 16px;
+}
+
+body, html, .app-wrapper{
+    margin: 0;
+    height: 100%;
+    font-family: 'Poppins';
+}

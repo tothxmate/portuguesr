@@ -2,8 +2,18 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+    <div class="app-wrapper">
+      <app-navigation></app-navigation>
+    </div>
+  `,
+  styles: [`
+    .app-wrapper { 
+      background-color: var(--background-color);
+      display: flex;
+      padding: 1rem;
+    }
+  `]
 })
 export class AppComponent {
   title = 'portuguesr';
