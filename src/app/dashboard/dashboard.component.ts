@@ -29,9 +29,6 @@ type Tile = {
       <div class="news-wrapper">
       </div>
     </div>
-    <div class="side-wrapper">
-      <tile height="100px" title="test" subtext="2222"></tile>
-    </div>
   `,
   styles: [`
     :host{
