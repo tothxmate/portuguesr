@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,8 +8,10 @@ import { NavigationComponent } from './navigation.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LearnWordsComponent } from './learn-words/learn-words.component';
 import { LearnGrammarComponent } from './learn-grammar/learn-grammar.component';
-import { TileComponent } from './dashboard/components/tile.component';
+import { TileComponent } from './shared/components/tile.component';
 import { SectionTitleComponent } from './dashboard/components/section-title.component';
+import { CreateLessonComponent } from './learn-words/components/create-lesson.component';
+import { LessonDetailsComponent } from './learn-words/components/lesson-details.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,14 @@ import { SectionTitleComponent } from './dashboard/components/section-title.comp
     LearnWordsComponent,
     LearnGrammarComponent,
     TileComponent,
-    SectionTitleComponent
+    SectionTitleComponent,
+    CreateLessonComponent,
+    LessonDetailsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
