@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { WidgetComponent } from './shared/components/widget.component';
 import { SectionTitleComponent } from './dashboard/components/section-title.component';
 import { CreateLessonComponent } from './learn-words/components/create-lesson.component';
 import { LessonDetailsComponent } from './learn-words/components/lesson-details.component';
+import { ButtonComponent } from './shared/components/button.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { LessonDetailsComponent } from './learn-words/components/lesson-details.
     WidgetComponent,
     SectionTitleComponent,
     CreateLessonComponent,
-    LessonDetailsComponent
+    LessonDetailsComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
