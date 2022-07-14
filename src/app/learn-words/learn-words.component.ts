@@ -7,9 +7,10 @@ import { Lesson } from './interfaces/Lesson'
   selector: 'page-learn-words',
   template: `
     <div class="main-wrapper">
+      <h1>Lessons</h1>
       <div class="lessons-wrapper">
-        <widget (click)="navigateToLessonDetails(tile.id)" *ngFor="let tile of lessons" [title]="tile.name" class="tile"></widget>
-        <widget (click)="navigateToCreateLesson()" title="+" class="tile add-lesson"></widget>
+        <widget (click)="navigateToLessonDetails(tile.id)" *ngFor="let tile of lessons" [title]="tile.name"></widget>
+        <widget (click)="navigateToCreateLesson()" title="+" class="add-lesson"></widget>
       </div>
     </div>
   `,
@@ -27,10 +28,10 @@ import { Lesson } from './interfaces/Lesson'
       display: flex;
       flex: 8;
     }
-    .tile{
+    widget{
       height: 150px;
     }
-    .tile:hover{
+    widget:hover{
       cursor:pointer;
     }
     .add-lesson{
