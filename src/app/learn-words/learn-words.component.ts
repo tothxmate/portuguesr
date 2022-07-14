@@ -1,19 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
-type Tile = {
-  id: number,
-  title: string,
-  subtext: string
-}
+import { LearnWordsService } from './learn-words.service';
+import { Lesson } from './interfaces/Lesson'
 
 @Component({
   selector: 'page-learn-words',
   template: `
     <div class="main-wrapper">
       <div class="lessons-wrapper">
-        <tile (click)="navigateToLessonDetails(tile.id)" *ngFor="let tile of lessons" [title]="tile.title" [subtext]="tile.subtext" class="tile"></tile>
-        <tile (click)="navigateToCreateLesson()" title="+" class="tile add-lesson"></tile>
+        <widget (click)="navigateToLessonDetails(tile.id)" *ngFor="let tile of lessons" [title]="tile.name" class="tile"></widget>
+        <widget (click)="navigateToCreateLesson()" title="+" class="tile add-lesson"></widget>
       </div>
     </div>
   `,
@@ -43,11 +39,7 @@ type Tile = {
   `]
 })
 export class LearnWordsComponent implements OnInit {
-  lessons: Tile[] = [
-    { id: 1, title: "General expressions", subtext: "33%"},
-    { id: 2, title: "Friends", subtext: "13%"},
-    { id: 3, title: "Family", subtext: "67%"}
-  ];
+  lessons: Lesson[] = [];
 
   navigateToCreateLesson() {
     this.router.navigate(['create-lesson']);
@@ -57,9 +49,11 @@ export class LearnWordsComponent implements OnInit {
     this.router.navigate(['lesson-details/'+lessonNumber]);
   }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private learnWordsService: LearnWordsService ) {
+    this.learnWordsService.getLessons().subscribe((data: Lesson[]) => this.lessons = data)
+  }
 
-  ngOnInit(): void {
+  ngOnInit(){
 
   }
 

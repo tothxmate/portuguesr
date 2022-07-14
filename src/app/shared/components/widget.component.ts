@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'tile',
+  selector: 'widget',
   template: `
-    <div class="tile-inner-wrapper">
+    <div class="widget-inner-wrapper">
         <h2>{{ title }}</h2>
         <p>{{ subtext }}</p>
     </div>
@@ -13,10 +13,11 @@ import { Component, Input, OnInit } from '@angular/core';
       flex: 1;
       padding: 1vw;
     }
-    .tile-inner-wrapper{
+    .widget-inner-wrapper{
       background-color: var(--main-color);
       border-radius: var(--border-radius);
       height: 100%;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     }
     h2, p{
       margin: 0;
@@ -24,7 +25,7 @@ import { Component, Input, OnInit } from '@angular/core';
     }
   `]
 })
-export class TileComponent implements OnInit {
+export class WidgetComponent implements OnInit {
   @Input() title: string | undefined;
   @Input() subtext: string | undefined;
 

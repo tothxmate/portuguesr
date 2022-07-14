@@ -10,19 +10,19 @@ type Tile = {
   template: `
     <div class="main-wrapper">
       <div class="statistics-wrapper">
-          <tile *ngFor="let tile of statistics" [title]="tile.title" [subtext]="tile.subtext"></tile>
+          <widget *ngFor="let tile of statistics" [title]="tile.title" [subtext]="tile.subtext"></widget>
       </div>
       <section-title title="Learn new words everyday!" subtext="What are you waiting for? Start your lesson by clicking the button below!"></section-title>
       <div class="lessons-wrapper">
-          <tile title="tttttttt" subtext="sssssss"></tile>
+          <widget title="tttttttt" subtext="sssssss"></widget>
           <div class="lessons-inner-wrapper">
             <div class="lessons-wrapper">
-              <tile title="tttttttt" subtext="sssssss"></tile>
-              <tile title="tttttttt" subtext="sssssss"></tile>
+              <widget title="tttttttt" subtext="sssssss"></widget>
+              <widget title="tttttttt" subtext="sssssss"></widget>
             </div>
             <div class="lessons-wrapper">
-              <tile title="tttttttt" subtext="sssssss"></tile>
-              <tile title="tttttttt" subtext="sssssss"></tile>
+              <widget title="tttttttt" subtext="sssssss"></widget>
+              <widget title="tttttttt" subtext="sssssss"></widget>
             </div>
           </div>
       </div>
