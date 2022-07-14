@@ -17,4 +17,9 @@ body, html, .app-wrapper{
     margin: 0;
     height: 100%;
     font-family: 'Poppins';
+    overflow: hidden;
+}
+
+button:hover {
+    cursor: pointer;
 }
