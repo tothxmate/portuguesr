@@ -25,6 +25,7 @@ type MenuItem = {
     .navigation-container {
       width: 15vw;
       margin: 1vw;
+      margin-right: 3vw;
       height: 100%;
       background-color: var(--main-color);
       border-radius: var(--border-radius);
