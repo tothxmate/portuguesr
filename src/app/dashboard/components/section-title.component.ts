@@ -9,33 +9,37 @@ import { Component, Input, OnInit } from '@angular/core';
         <p>{{ subtext }}</p>
       </div>
       <div class="section-right">
-        <p>subtext</p>
+        <p class="subtext-right">{{ subtextRight }}</p>
       </div>
     </div>
   `,
   styles: [`
     :host{
       flex: 1;
-      padding: 1vw;
+      margin: 1vw;
     }
     .section-title-wrapper{
       height: 100%;
+      padding: 30px 0px 0px 0px;
+      display: flex;
     }
     h2, p{
       margin: 0;
-      padding: 10px;
-    }
-    .section-left{
-      display:inline-block;
     }
     .section-right{
-      float:right;
+      margin-left: auto;
+      margin-top: auto;
+      margin-bottom: 2vw;
+    }
+    .subtext-right{
+      font-weight:900;
     }
   `]
 })
 export class SectionTitleComponent implements OnInit {
   @Input() title: string | undefined;
   @Input() subtext: string | undefined;
+  @Input() subtextRight: string | undefined;
 
   constructor() { }
 

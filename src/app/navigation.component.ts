@@ -31,13 +31,14 @@ type MenuItem = {
       border-radius: var(--border-radius);
       flex: 1;
       padding: 1rem;
+      padding-left: 2rem;
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     }
     .logo {
       width: 80%;
     }
     .navigation-ul {
-      padding-left: 10px;
+      padding-left: 5px;
     }
     .navigation-ul li {
       list-style: none;
