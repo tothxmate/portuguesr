@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './shared/services/auth.service';
 
 type MenuItem = {
   title: string,
@@ -13,17 +14,18 @@ type MenuItem = {
       <img src="../assets/logo.png" class="logo">
       <ul class="navigation-ul">
         <li *ngFor="let navigationItem of navigationItems">
-          <a [href]="navigationItem.routerLink">
+          <a [routerLink]="navigationItem.routerLink">
             <img [src]="navigationItem.icon" class="menu-item-icon">
             {{ navigationItem.title }}
           </a>
         </li>
       </ul>
+      <app-button text="Logout" color="var(--tertiary-color)" (click)="logout()"></app-button>
     </div>
   `,
   styles: [`
     .navigation-container {
-      width: 15vw;
+      width: 12vw;
       margin: 1vw;
       margin-right: 3vw;
       height: 100%;
@@ -52,6 +54,10 @@ type MenuItem = {
       text-decoration: none;
       color: var(--text-color);
     }
+    app-button{
+      position: absolute;
+      bottom: 10px;
+    }
   `]
 })
 
@@ -61,7 +67,12 @@ export class NavigationComponent {
     { title: "Learn words", icon: "../assets/menu-item-learn-words.png", routerLink: "learn-words"},
     { title: "Learn grammar", icon: "../assets/menu-item-learn-grammar.png", routerLink: "learn-grammar"}
   ];
-  constructor(){
+  authService: any;
+  constructor( authService: AuthService ) { 
+    this.authService = authService
+  }
 
+  logout(): void {
+    this.authService.SignOut()
   }
 }

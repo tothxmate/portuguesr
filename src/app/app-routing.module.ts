@@ -4,18 +4,23 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LearnGrammarComponent } from './learn-grammar/learn-grammar.component';
 import { CreateLessonComponent } from './learn-words/components/create-lesson.component';
 import { LearnWordsComponent } from './learn-words/learn-words.component';
+import { LoginComponent } from './login/login.component';
 
+import { AuthGuard } from './shared/guard/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent },
-  { path: 'learn-words', component: LearnWordsComponent },
-  { path: 'learn-grammar', component: LearnGrammarComponent },
-  { path: 'create-lesson', component: CreateLessonComponent },
-  { path: 'lesson-details/:id', component: CreateLessonComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'learn-words', component: LearnWordsComponent, canActivate: [AuthGuard] },
+  { path: 'learn-grammar', component: LearnGrammarComponent, canActivate: [AuthGuard] },
+  { path: 'create-lesson', component: CreateLessonComponent, canActivate: [AuthGuard] },
+  { path: 'lesson-details/:id', component: CreateLessonComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: []
 })
 export class AppRoutingModule { }
