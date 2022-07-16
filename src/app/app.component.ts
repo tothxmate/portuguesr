@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { AuthService } from './shared/services/auth.service';
 
 @Component({
   selector: 'app-root',
   template: `
     <div class="app-wrapper">
-      <app-navigation></app-navigation>
+      <app-navigation *ngIf="isLoggedIn"></app-navigation>
       <div class="router-outlet-wrapper">
         <router-outlet></router-outlet>
       </div>
@@ -21,5 +22,9 @@ import { Component } from '@angular/core';
   `]
 })
 export class AppComponent {
+  isLoggedIn: boolean = false;
+  constructor( authService: AuthService ){
+    this.isLoggedIn = authService.isLoggedIn
+  }
   title = 'portuguesr';
 }
