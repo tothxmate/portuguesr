@@ -9,6 +9,9 @@ import { AuthService } from './shared/services/auth.service';
       <div class="router-outlet-wrapper">
         <router-outlet></router-outlet>
       </div>
+      <div class="right-section">
+        <profile-widget></profile-widget>
+      </div>
     </div>
   `,
   styles: [`
@@ -19,12 +22,18 @@ import { AuthService } from './shared/services/auth.service';
     .router-outlet-wrapper {
       height: 100%;
     }
+    .right-section{
+      width: 100%;
+      padding-right: 1vw;
+    }
   `]
 })
 export class AppComponent {
   isLoggedIn: boolean = false;
+  authService: any;
+
   constructor( authService: AuthService ){
+    this.authService = authService
     this.isLoggedIn = authService.isLoggedIn
   }
-  title = 'portuguesr';
 }
