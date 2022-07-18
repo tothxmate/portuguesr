@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
     <div class="main-wrapper">
         <h1>Learn grammar</h1>
         <app-button color="var(--secondary-color)" text="Edit"></app-button>
-        <angular-editor [placeholder]="'Enter text here...'"></angular-editor>
     </div>
   `,
   styles: [`
@@ -17,6 +16,7 @@ import { Component, OnInit } from '@angular/core';
       display:inline-block;
     }
     app-button{
+      margin-top: 1vw;
       float:right;
     }
   `]
