@@ -10,7 +10,7 @@ import { Lesson } from './interfaces/Lesson'
       <h1>Lessons</h1>
       <div class="lessons-wrapper">
         <widget (click)="navigateToLessonDetails(tile.id)" *ngFor="let tile of lessons" [title]="tile.name"></widget>
-        <widget (click)="navigateToCreateLesson()" title="+" class="add-lesson"></widget>
+        <widget (click)="navigateToCreateLesson()" title="+" [centered]="true" [titleBig]="true" class="add-lesson"></widget>
       </div>
     </div>
   `,
@@ -30,6 +30,7 @@ import { Lesson } from './interfaces/Lesson'
     }
     widget{
       height: 150px;
+      width: 25%;
     }
     widget:hover{
       cursor:pointer;
