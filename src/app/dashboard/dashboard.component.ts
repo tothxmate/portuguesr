@@ -44,6 +44,9 @@ type Tile = {
       display: flex;
       flex: 1;
     }
+    widget{
+      flex: 1; 
+    }
     .lessons-wrapper{
       display: flex;
       flex: 8;
