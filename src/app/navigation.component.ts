@@ -20,7 +20,6 @@ type MenuItem = {
           </a>
         </li>
       </ul>
-      <app-button text="Logout" color="var(--tertiary-color)" (click)="logout()"></app-button>
     </div>
   `,
   styles: [`
@@ -31,16 +30,17 @@ type MenuItem = {
       height: 100%;
       background-color: var(--main-color);
       border-radius: var(--border-radius);
-      flex: 1;
       padding: 1rem;
-      padding-left: 2rem;
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      display: flex;
+      flex-direction: column;
     }
-    .logo {
-      width: 80%;
+    .logo{
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
     .navigation-ul {
-      padding-left: 5px;
+      padding-left: 1.5rem;
     }
     .navigation-ul li {
       list-style: none;
@@ -54,10 +54,6 @@ type MenuItem = {
       text-decoration: none;
       color: var(--text-color);
     }
-    app-button{
-      position: absolute;
-      bottom: 10px;
-    }
   `]
 })
 
@@ -67,12 +63,4 @@ export class NavigationComponent {
     { title: "Learn words", icon: "../assets/menu-item-learn-words.png", routerLink: "learn-words"},
     { title: "Learn grammar", icon: "../assets/menu-item-learn-grammar.png", routerLink: "learn-grammar"}
   ];
-  authService: any;
-  constructor( authService: AuthService ) { 
-    this.authService = authService
-  }
-
-  logout(): void {
-    this.authService.SignOut()
-  }
 }
