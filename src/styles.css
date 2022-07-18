@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:500');
 
 :root {
     /* Colors */
@@ -22,4 +23,13 @@ body, html, .app-wrapper{
 
 button:hover {
     cursor: pointer;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+h2 {
+    font-weight: 600;
 }
