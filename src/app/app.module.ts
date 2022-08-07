@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NgxEditorModule } from 'ngx-editor';
 
 // Firebase services + environment module
 import { AngularFireModule } from '@angular/fire/compat';
@@ -25,9 +26,13 @@ import { CreateLessonComponent } from './learn-words/components/create-lesson.co
 import { LessonDetailsComponent } from './learn-words/components/lesson-details.component';
 import { ButtonComponent } from './shared/components/button.component';
 import { LoginComponent } from './login/login.component';
+import { ProfileWidget } from './shared/components/profile-widget';
+import { LessonComponent } from './learn-words/components/lesson.component';
 
 //Services
 import { AuthService } from "./shared/services/auth.service";
+import { LoadingIndicatorComponent } from './shared/components/loadingIndicator.component';
+import { WriteDialogueComponent } from './write-dialogue/write-dialogue.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +46,11 @@ import { AuthService } from "./shared/services/auth.service";
     CreateLessonComponent,
     LessonDetailsComponent,
     ButtonComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileWidget,
+    LessonComponent,
+    LoadingIndicatorComponent,
+    WriteDialogueComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +64,7 @@ import { AuthService } from "./shared/services/auth.service";
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    NgxEditorModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
