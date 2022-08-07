@@ -47,6 +47,11 @@ export class LearnWordsService {
     this.lessonContentRef.update(newLessonName.key!,lesson.translations)
   }
 
+  deleteLesson(key: string): void{
+    this.lessonNamesRef.remove(key)
+    this.lessonContentRef.remove(key)
+  }
+
   uploadImage(file: File):any{
     var n = Date.now();
     const filePath = `LessonsImages/${n}`;
