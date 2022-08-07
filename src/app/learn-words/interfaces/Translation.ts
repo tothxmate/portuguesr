@@ -1,4 +1,4 @@
-export interface Translation {
-    portuguese: "",
-    english: ""
+export type Translation = {
+    portuguese: string,
+    english: string
 }
