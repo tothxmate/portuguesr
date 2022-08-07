@@ -85,7 +85,7 @@ export class LoginComponent implements OnInit{
 
   ngOnInit(): void {
     if(this.authService.isLoggedIn){
-      this.router.navigate(['dashboard'])
+      this.router.navigate(['learn-words'])
     }
   }
 
