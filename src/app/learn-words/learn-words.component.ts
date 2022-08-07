@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LearnWordsService } from './learn-words.service';
 
@@ -8,7 +8,7 @@ import { LearnWordsService } from './learn-words.service';
     <div class="main-wrapper">
       <h1>Lessons</h1>
       <div class="lessons-wrapper" *ngIf="areLessonsLoaded">
-        <widget (click)="navigateToLesson(lessonName.key)" *ngFor="let lessonName of lessonNames" [title]="lessonName.value" [editable]="true" (showEditScreen)="navigateToLessonDetails(lessonName.key)"></widget>
+        <widget (click)="navigateToLesson(lessonName.key)" *ngFor="let lessonName of lessonNames" [title]="lessonName.value" [editable]="true" (showEditScreen)="navigateToLessonDetails(lessonName.key)" (deleteItem)="deleteLesson(lessonName.key)"></widget>
         <widget (click)="navigateToCreateLesson()" title="+" [centered]="true" [titleBig]="true" class="add-lesson"></widget>
       </div>
       <app-loading-indicator *ngIf="!areLessonsLoaded"></app-loading-indicator>
@@ -40,7 +40,7 @@ import { LearnWordsService } from './learn-words.service';
     }
   `]
 })
-export class LearnWordsComponent implements OnInit {
+export class LearnWordsComponent{
   lessonNames: any[] = [];
   areLessonsLoaded: boolean = false;
 
@@ -56,6 +56,10 @@ export class LearnWordsComponent implements OnInit {
     this.router.navigate(['lesson', lessonNumber]);
   }
 
+  deleteLesson(key: string){
+    this.learnWordsService.deleteLesson(key)
+  }
+
   constructor(private router: Router, private learnWordsService: LearnWordsService) {
     this.learnWordsService.getLessonNames().subscribe(actions => {
       this.areLessonsLoaded = true
@@ -64,8 +68,4 @@ export class LearnWordsComponent implements OnInit {
       });
     });
   }
-
-  ngOnInit(){
-  }
-
 }
