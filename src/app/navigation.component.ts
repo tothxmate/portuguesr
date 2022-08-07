@@ -40,7 +40,7 @@ type MenuItem = {
       padding-right: 1rem;
     }
     .navigation-ul {
-      padding-left: 1.5rem;
+      padding-left: 1.2rem;
     }
     .navigation-ul li {
       list-style: none;
@@ -59,8 +59,9 @@ type MenuItem = {
 
 export class NavigationComponent {
   navigationItems: MenuItem[] = [
-    { title: "Dashboard", icon: "../assets/menu-item-dashboard.png", routerLink: ""},
+    //{ title: "Dashboard", icon: "../assets/menu-item-dashboard.png", routerLink: ""},
     { title: "Learn words", icon: "../assets/menu-item-learn-words.png", routerLink: "learn-words"},
-    { title: "Learn grammar", icon: "../assets/menu-item-learn-grammar.png", routerLink: "learn-grammar"}
+    { title: "Learn grammar", icon: "../assets/menu-item-learn-grammar.png", routerLink: "learn-grammar"},
+    { title: "Write a dialogue", icon: "../assets/menu-item-write-dialogue.png", routerLink: "write-dialogue"}
   ];
 }
