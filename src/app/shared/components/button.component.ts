@@ -3,12 +3,13 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-button',
   template: `
-    <button [style.backgroundColor]="color">{{ text }}</button>
+    <button 
+      [ngStyle]="customStyle"
+      [style.backgroundColor]="color">{{ text }}</button>
   `,
   styles: [`
     :host{
         flex: 1;
-        padding: 1vw;
     }
     button {
         border-radius: 8px;
@@ -36,8 +37,11 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ButtonComponent implements OnInit {
   @Input() text: string | undefined;
   @Input() color: string | undefined;
+  @Input() customStyle: { [klass: string]: any; } | null = null;
 
-  constructor() { }
+  constructor() {
+
+   }
 
   ngOnInit(): void {
 
